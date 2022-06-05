@@ -11,8 +11,8 @@
     "dev:ssr:shop": "ng run shop:serve-ssr",
     "serve:ssr:web": "node dist/web/server/main.js",
     "serve:ssr:shop": "node dist/shop/server/main.js",
-    "build:ssr:web": "ng build && ng run web:server",
-    "build:ssr:shop": "ng build && ng run shop:server",
+    "build:ssr:web": "ng build web && ng run web:server",
+    "build:ssr:shop": "ng build shop && ng run shop:server",
     "prerender:web": "ng run web:prerender",
     "prerender:shop": "ng run shop:prerender"
   },
