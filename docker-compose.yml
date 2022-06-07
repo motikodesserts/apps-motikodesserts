@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile-web
+    ports:
+      - "3000:3000"
+    container_name: motikodesserts-web
+  shop:
+    build:
+      context: .
+      dockerfile: Dockerfile-shop
+    ports:
+      - "3001:3001"
+    container_name: motikodesserts-shop
