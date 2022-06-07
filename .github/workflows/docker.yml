@@ -42,5 +42,5 @@ jobs:
 
       - name: docker push
         run: |
-          docker push -a ioanbeilic/motikodesserts:web
-          docker push -a ioanbeilic/motikodesserts:shop
+          docker push ioanbeilic/motikodesserts:web
+          docker push ioanbeilic/motikodesserts:shop
