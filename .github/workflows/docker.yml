@@ -40,12 +40,12 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: docker build web
-        run: docker build . -f Dockerfile-web -t ghcr.io/ioanbeilic/motikodesserts-web
+        run: docker build . -f Dockerfile-web -t ghcr.io/motikodesserts/web
 
       - name: docker build shop
-        run: docker build . -f Dockerfile-shop -t ghcr.io/ioanbeilic/motikodesserts-shop
+        run: docker build . -f Dockerfile-shop -t ghcr.io/motikodesserts/shop
 
       - name: docker push
         run: |
-          docker push ghcr.io/ioanbeilic/motikodesserts-web
-          docker push ghcr.io/ioanbeilic/motikodesserts-shop
+          docker push ghcr.io/motikodesserts/web
+          docker push ghcr.io/motikodesserts/shop
