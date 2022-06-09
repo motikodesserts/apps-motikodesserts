@@ -1,5 +1,4 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/$USER/public_html/web
+    - export DEPLOYPATH=/home/moticodesserts/public_html/web
     - /bin/cp * $DEPLOYPATH
-    - /bin/cp . $DEPLOYPATH
