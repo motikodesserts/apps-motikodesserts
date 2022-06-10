@@ -69,7 +69,6 @@ if (moduleFilename === __filename || moduleFilename.includes('iisnode')) {
   run();
 }
 */
-
 run();
 
 export * from './src/main.server';
