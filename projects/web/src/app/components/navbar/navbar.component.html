@@ -1,6 +1,6 @@
 <header
-  class="w-full fixed flex justify-between md:justify-center items-center p-8 pt-10 transition-[height] ease-in-out delay-450"
-  [ngClass]="topDistance > 100 ? 'h-20 my-18' : 'h-36 my-18'"
+  class="bg-transparent z-40 w-full fixed flex justify-between md:justify-center items-center transition-[height] ease-in-out delay-450"
+  [ngClass]="topDistance > 100 ? 'md:h-20 bg-white' : 'h-36'"
 >
   <button class="md:hidden" (click)="navOpen = !navOpen">
     <svg
@@ -23,9 +23,12 @@
       <img class="h-16" src="assets/img/logo.png" alt="motkodesserts logo" />
     </a>
   </div>
-  <nav>
+  <nav
+    class="w-full flex justify-center"
+    [ngClass]="topDistance > 100 ? ' bg-white' : ''"
+  >
     <ul
-      class="bg-white z-40 fixed left-0 right-0 min-h-screen bg-white-500 space-y-4 p-4 transform translate-x-full transition duration-200 md:relative md:flex md:min-h-0 md:space-y-0 md:space-x-6 md:p-0 md:translate-x-0 md:min-w-full mt-16"
+      class="bg-white md:bg-transparent fixed left-0 right-0 min-h-screen space-y-4 p-4 transform translate-x-full transition duration-200 md:relative md:flex md:min-h-0 md:space-y-0 md:space-x-6 md:translate-x-0 mt-16"
       [ngClass]="navOpen ? 'translate-x-0 bg-white-500' : 'translate-x-full'"
     >
       <li
@@ -33,23 +36,27 @@
         *ngFor="let p of pages; let i = index"
         [ngClass]="!p.title ? 'hidden md:flex' : ''"
       >
-        <img
-          *ngIf="!p.title"
-          [routerLink]="[p.url]"
-          class="h-0 my-8 mx-16"
-          [ngClass]="topDistance > 100 ? 'md:h-16' : 'md:h-32'"
-          src="assets/img/logo.png"
-          alt="motkodesserts
+        <div>
+          <img
+            *ngIf="!p.title"
+            [routerLink]="[p.url]"
+            class="h-0 my-8 mx-16"
+            [ngClass]="topDistance > 100 ? 'md:h-16' : 'md:h-32'"
+            src="assets/img/logo.png"
+            alt="motkodesserts
           logo"
-        />
-
+          />
+        </div>
         <button
           *ngIf="p.title"
           [routerLink]="[p.url]"
           class="flex md:justify-center py-2 px-4 no-underline hover:underline"
           [ngClass]="topDistance > 100 ? 'p-2' : 'p-4'"
         >
-          <span [ngClass]="topDistance > 100 ? 'md:py-10' : 'md:py-20'">
+          <span
+            [ngClass]="topDistance > 100 ? 'md:py-10' : 'md:py-20'"
+            (click)="navOpen = !navOpen"
+          >
             {{ p.title | titlecase }}
           </span>
         </button>
