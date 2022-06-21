@@ -1,32 +1,39 @@
 <header
-  class="bg-transparent z-40 w-full fixed flex justify-between md:justify-center items-center transition-[height] ease-in-out delay-450"
+  class="bg-transparent z-40 w-full fixed md:justify-center items-center transition-[height] ease-in-out delay-450"
   [ngClass]="topDistance > 100 ? 'md:h-20 bg-white' : 'h-36'"
 >
-  <button class="md:hidden" (click)="navOpen = !navOpen">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="h-8 w-8 text-black"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M4 6h16M4 12h16M4 18h16"
-      />
-    </svg>
-  </button>
-  <div class="md:hidden">
-    <a routerLink="/">
-      <img
-        class="h-16"
-        src="https://motikodesserts.com/wp-content/uploads/2021/04/MOTIKO-logo-01-1.png"
-        alt="motkodesserts logo"
-      />
-    </a>
+  <div
+    class="flex justify-between p-2"
+    [ngClass]="topDistance > 100 ? ' bg-white' : ''"
+  >
+    <button class="md:hidden" (click)="navOpen = !navOpen">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-8 w-8 text-black"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        />
+      </svg>
+    </button>
+    <div class="md:hidden">
+      <a routerLink="/">
+        <img
+          class="h-16"
+          src="https://motikodesserts.com/wp-content/uploads/2021/04/MOTIKO-logo-01-1.png"
+          alt="motkodesserts logo"
+        />
+      </a>
+    </div>
+    <div></div>
   </div>
+
   <nav
     class="w-full flex justify-center"
     [ngClass]="topDistance > 100 ? ' bg-white' : ''"
@@ -68,8 +75,3 @@
     </ul>
   </nav>
 </header>
-
-<br />
-<br />
-<br />
-<br />
