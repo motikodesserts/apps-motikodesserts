@@ -10,3 +10,17 @@
 html {
   scroll-behavior: smooth;
 }
+
+.overlay-content {
+  overflow: hidden;
+}
+.overlay {
+  position: absolute;
+  left: -18rem;
+  bottom: -10rem;
+  width: 55rem;
+  transition: transform 0.5s 0.5s, opacity 0.2s 0.5s;
+  // transform: translate3d(0%, -50%, 0);
+  opacity: 1;
+  fill: white;
+}
