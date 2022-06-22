@@ -62,9 +62,10 @@
           logo"
           />
         </div>
-        <button
+        <a
           *ngIf="p.title"
           [routerLink]="[p.url]"
+          [fragment]="p.fragment"
           class="flex md:justify-center py-2 px-4 no-underline hover:underline"
           [ngClass]="topDistance > point ? 'p-2' : 'p-4'"
         >
@@ -74,7 +75,7 @@
           >
             {{ p.title | titlecase }}
           </span>
-        </button>
+        </a>
       </li>
     </ul>
   </nav>

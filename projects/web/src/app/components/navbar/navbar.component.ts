@@ -10,11 +10,11 @@ export class NavbarComponent implements OnInit {
   point = 200;
   navOpen = false;
   public pages = [
-    { title: 'about us', url: '/about-us' },
-    { title: 'catalogs', url: '/catalogs' },
-    { title: '', url: '/' },
-    { title: 'for partners', url: '/partners' },
-    { title: 'contact', url: '/contact' },
+    { title: 'about us', url: '/', fragment: 'about-us' },
+    { title: 'catalogs', url: '/', fragment: 'catalogs' },
+    { title: '', url: '/', fragment: 'home' },
+    { title: 'for partners', url: '/', fragment: 'partners' },
+    { title: 'contact', url: '/', fragment: 'contact' },
   ];
 
   @HostListener('window:scroll', ['$event']) // for window scroll events

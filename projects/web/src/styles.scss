@@ -6,3 +6,7 @@
 .text-border {
   -webkit-text-stroke: 0.2px white;
 }
+
+html {
+  scroll-behavior: smooth;
+}
