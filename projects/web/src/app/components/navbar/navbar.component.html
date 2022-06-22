@@ -1,10 +1,10 @@
 <header
-  class="bg-transparent z-40 w-full fixed md:justify-center items-center transition-[height] ease-in-out delay-450"
-  [ngClass]="topDistance > 100 ? 'md:h-20 bg-white' : 'h-36'"
+  class="text-border bg-transparent z-40 w-full fixed md:justify-center items-center transition-[height] ease-in-out delay-450"
+  [ngClass]="topDistance > point ? 'md:h-20 bg-white' : 'h-36'"
 >
   <div
     class="flex justify-between p-2"
-    [ngClass]="topDistance > 100 ? ' bg-white' : ''"
+    [ngClass]="topDistance > point ? ' bg-white' : ''"
   >
     <button class="md:hidden" (click)="navOpen = !navOpen">
       <svg
@@ -36,10 +36,14 @@
 
   <nav
     class="w-full flex justify-center"
-    [ngClass]="topDistance > 100 ? ' bg-white' : ''"
+    [ngClass]="
+      topDistance > point
+        ? 'md:h-28 md:-my-16 bg-white shadow-xl animate__animated animate__fadeInDown'
+        : ''
+    "
   >
     <ul
-      class="bg-white md:bg-transparent fixed left-0 right-0 min-h-screen space-y-4 p-4 transform translate-x-full transition duration-200 md:relative md:flex md:min-h-0 md:space-y-0 md:space-x-6 md:translate-x-0 mt-16"
+      class="bg-white md:bg-transparent fixed left-0 right-0 min-h-screen space-y-4 p-4 transform translate-x-full transition duration-200 md:relative md:flex md:min-h-0 md:space-y-0 md:space-x-6 md:translate-x-0"
       [ngClass]="navOpen ? 'translate-x-0 bg-white-500' : 'translate-x-full'"
     >
       <li
@@ -52,7 +56,7 @@
             *ngIf="!p.title"
             [routerLink]="[p.url]"
             class="h-0 my-8 mx-16"
-            [ngClass]="topDistance > 100 ? 'md:h-16' : 'md:h-32'"
+            [ngClass]="topDistance > point ? 'md:h-16' : 'md:h-32'"
             src="https://motikodesserts.com/wp-content/uploads/2021/04/MOTIKO-logo-01-1.png"
             alt="motkodesserts
           logo"
@@ -62,10 +66,10 @@
           *ngIf="p.title"
           [routerLink]="[p.url]"
           class="flex md:justify-center py-2 px-4 no-underline hover:underline"
-          [ngClass]="topDistance > 100 ? 'p-2' : 'p-4'"
+          [ngClass]="topDistance > point ? 'p-2' : 'p-4'"
         >
           <span
-            [ngClass]="topDistance > 100 ? 'md:py-10' : 'md:py-20'"
+            [ngClass]="topDistance > point ? 'md:py-10' : 'md:py-20'"
             (click)="navOpen = !navOpen"
           >
             {{ p.title | titlecase }}

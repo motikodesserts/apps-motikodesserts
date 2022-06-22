@@ -7,6 +7,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   topDistance = 0;
+  point = 200;
   navOpen = false;
   public pages = [
     { title: 'about us', url: '/about-us' },
