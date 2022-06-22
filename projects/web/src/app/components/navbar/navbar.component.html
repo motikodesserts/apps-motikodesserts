@@ -1,10 +1,18 @@
 <header
-  class="text-border text-xl bg-transparent z-40 w-full fixed md:justify-center items-center transition-[height] ease-in-out delay-450"
-  [ngClass]="topDistance > point ? 'md:h-20 bg-white' : 'h-36'"
+  class="text-border animate__animated animate__fadeInDown text-xl bg-transparent z-40 w-full fixed md:justify-center items-center transition-[height] ease-in-out delay-450"
+  [ngClass]="
+    topDistance > point
+      ? 'md:h-20 animate__animated animate__fadeInDown'
+      : 'h-36 animate__animated animate__fadeInDown'
+  "
 >
   <div
     class="flex justify-between p-2"
-    [ngClass]="topDistance > point ? ' bg-white' : ''"
+    [ngClass]="
+      topDistance > point
+        ? ' bg-white animate__animated animate__fadeInDown'
+        : ''
+    "
   >
     <button class="md:hidden" (click)="navOpen = !navOpen">
       <svg
@@ -57,7 +65,7 @@
             [routerLink]="[p.url]"
             class="h-0 my-8 mx-16"
             [ngClass]="topDistance > point ? 'md:h-16' : 'md:h-32'"
-            src="https://motikodesserts.com/wp-content/uploads/2021/04/MOTIKO-logo-01-1.png"
+            src="assets/img/logo.png"
             alt="motkodesserts
           logo"
           />
