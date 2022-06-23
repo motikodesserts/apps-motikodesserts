@@ -4,10 +4,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        pimary: "#f9dde9",
-        secondary: "#f1e0f3",
-        tertiary: "#f1e0f3",
-        quaternary: "#f1e0f3",
+        motikoRed: "#ef426f",
+        motikoYelow: "#F4F2BD",
+        motikoBlue: "#E1E7EE",
+        motikoOrange: "#FACCAD",
+        motikoGreen: "#B4D3b2",
+        motikoRedOrange: "#F$DAD2",
+        motikoPink: "#DBCEE3",
       },
     },
   },
