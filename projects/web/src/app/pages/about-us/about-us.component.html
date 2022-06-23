@@ -1,1 +1,15 @@
-<p>test</p>
+<div class="w-full">
+  <app-page-header
+    [title]="title"
+    [img]="imgHeader"
+    [description]="headerDescription"
+  ></app-page-header>
+</div>
+
+<div class="p-32 relative">
+  <div class="absolute w-full h-96 p-32 bg-[#f9dde9] ml-16"></div>
+  <div
+    class="absolute bg-cover bg-center img-shadow-1 w-96 h-96 m-5 md:w-72 md:h-72"
+    [style.background-image]="'url(assets/img/home.jpg)'"
+  ></div>
+</div>

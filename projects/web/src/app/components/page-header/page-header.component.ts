@@ -6,8 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./page-header.component.scss'],
 })
 export class PageHeaderComponent implements OnInit {
-  @Input() title: string = '';
-  @Input() img: string = 'assets/img/about.jpg';
+  @Input() title?: string;
+  @Input() img?: string;
   @Input() description?: string;
 
   constructor() {}
@@ -15,5 +15,6 @@ export class PageHeaderComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.img);
     console.log(this.title);
+    console.log(this.description);
   }
 }

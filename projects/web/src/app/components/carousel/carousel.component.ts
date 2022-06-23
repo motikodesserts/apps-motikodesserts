@@ -17,7 +17,15 @@ export class CarouselComponent implements OnInit {
 
   selectedIndex = 0;
 
-  constructor() {}
+  constructor() {
+    setTimeout(() => {
+      if (this.selectedIndex === 4) {
+        this.selectedIndex = 0;
+      } else {
+        this.selectedIndex += 1;
+      }
+    }, 5000);
+  }
 
   ngOnInit(): void {}
 }
