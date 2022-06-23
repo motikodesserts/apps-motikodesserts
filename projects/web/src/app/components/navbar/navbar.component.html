@@ -67,24 +67,23 @@
               class="h-0 my-8 mx-16"
               [ngClass]="topDistance > point ? 'md:h-16' : 'md:h-32'"
               [src]="'assets/img/logo-white.png'"
-              alt="motkodesserts
-          logo"
+              alt="motkodesserts logo"
             />
           </div>
-          <a
+          <button
             *ngIf="p.title"
             [routerLink]="[p.url]"
-            [fragment]="p.fragment"
-            class="flex md:justify-center py-2 px-4 no-underline hover:underline"
+            routerLinkActive="active-link"
+            class="text-white flex md:justify-center py-2 px-4 no-underline hover:underline"
             [ngClass]="topDistance > point ? 'p-2' : 'p-4'"
           >
             <span
               [ngClass]="topDistance > point ? 'md:py-10' : 'md:py-20'"
-              (click)="navOpen = !navOpen"
+              (click)="navOpen ? (navOpen = !navOpen) : (navOpen = navOpen)"
             >
               {{ p.title | titlecase }}
             </span>
-          </a>
+          </button>
         </li>
       </ul>
     </nav>
