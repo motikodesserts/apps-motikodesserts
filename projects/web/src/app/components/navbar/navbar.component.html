@@ -1,23 +1,35 @@
 <header
-  class="text-border animate__animated animate__fadeInDown text-xl bg-transparent z-40 w-full fixed md:justify-center items-center transition-[height] ease-in-out delay-450"
+  class="text-border bg-gradient-to-b text-white animate__animated animate__fadeInDown text-xl z-40 w-full fixed md:justify-center items-center transition-[height] ease-in-out delay-450"
   [ngClass]="
     topDistance > point
-      ? 'md:h-20 animate__animated animate__fadeInDown'
+      ? 'md:h-20 animate__animated animate__fadeInDown bg-black/[.80]'
       : 'h-36 animate__animated animate__fadeInDown'
   "
 >
   <div
-    class="flex justify-between p-2"
-    [ngClass]="
-      topDistance > point
-        ? ' bg-white animate__animated animate__fadeInDown'
-        : ''
-    "
+    [ngClass]="navOpen ? 'bg-black/[.80]' : 'bg-gradient-to-b from-black/[.80]'"
   >
-    <button class="md:hidden" (click)="navOpen = !navOpen">
+    <div
+      class="flex justify-center p-2"
+      [ngClass]="
+        topDistance > point ? 'animate__animated animate__fadeInDown' : ''
+      "
+    >
+      <div class="md:hidden ml-10">
+        <a routerLink="/">
+          <img
+            class="h-16"
+            alt="motkodesserts logo"
+            src="assets/img/logo-white.png"
+          />
+        </a>
+      </div>
+    </div>
+
+    <button class="absolute md:hidden m-8 -mt-16" (click)="navOpen = !navOpen">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-8 w-8 text-black"
+        class="h-8 w-8 text-white text-border"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -30,61 +42,51 @@
         />
       </svg>
     </button>
-    <div class="md:hidden">
-      <a routerLink="/">
-        <img
-          class="h-16"
-          src="https://motikodesserts.com/wp-content/uploads/2021/04/MOTIKO-logo-01-1.png"
-          alt="motkodesserts logo"
-        />
-      </a>
-    </div>
-    <div></div>
-  </div>
 
-  <nav
-    class="w-full flex justify-center"
-    [ngClass]="
-      topDistance > point
-        ? 'md:h-28 md:-my-16 bg-white shadow-xl animate__animated animate__fadeInDown'
-        : ''
-    "
-  >
-    <ul
-      class="bg-white md:bg-transparent fixed left-0 right-0 min-h-screen space-y-4 p-4 transform translate-x-full transition duration-200 md:relative md:flex md:min-h-0 md:space-y-0 md:space-x-6 md:translate-x-0"
-      [ngClass]="navOpen ? 'translate-x-0 bg-white-500' : 'translate-x-full'"
+    <nav
+      class="w-full flex justify-center"
+      [ngClass]="
+        topDistance > point
+          ? 'md:h-28 md:-my-16  mt-0 shadow-xl animate__animated animate__fadeInDown'
+          : 'bg-gradient-to-b from-black/[.80] md:-mt-5 '
+      "
     >
-      <li
-        class="cursor-pointer"
-        *ngFor="let p of pages; let i = index"
-        [ngClass]="!p.title ? 'hidden md:flex' : ''"
+      <ul
+        class="md fixed bg-black/[.80] md:bg-black/[.01] left-0 right-0 min-h-screen space-y-4 p-4 transform translate-x-full transition duration-200 md:relative md:flex md:min-h-0 md:space-y-0 md:space-x-6 md:translate-x-0"
+        [ngClass]="navOpen ? 'translate-x-0' : 'translate-x-full'"
       >
-        <div>
-          <img
-            *ngIf="!p.title"
-            [routerLink]="[p.url]"
-            class="h-0 my-8 mx-16"
-            [ngClass]="topDistance > point ? 'md:h-16' : 'md:h-32'"
-            src="assets/img/logo.png"
-            alt="motkodesserts
-          logo"
-          />
-        </div>
-        <a
-          *ngIf="p.title"
-          [routerLink]="[p.url]"
-          [fragment]="p.fragment"
-          class="flex md:justify-center py-2 px-4 no-underline hover:underline"
-          [ngClass]="topDistance > point ? 'p-2' : 'p-4'"
+        <li
+          class="cursor-pointer"
+          *ngFor="let p of pages; let i = index"
+          [ngClass]="!p.title ? 'hidden md:flex' : ''"
         >
-          <span
-            [ngClass]="topDistance > point ? 'md:py-10' : 'md:py-20'"
-            (click)="navOpen = !navOpen"
+          <div>
+            <img
+              *ngIf="!p.title"
+              [routerLink]="[p.url]"
+              class="h-0 my-8 mx-16"
+              [ngClass]="topDistance > point ? 'md:h-16' : 'md:h-32'"
+              [src]="'assets/img/logo-white.png'"
+              alt="motkodesserts
+          logo"
+            />
+          </div>
+          <a
+            *ngIf="p.title"
+            [routerLink]="[p.url]"
+            [fragment]="p.fragment"
+            class="flex md:justify-center py-2 px-4 no-underline hover:underline"
+            [ngClass]="topDistance > point ? 'p-2' : 'p-4'"
           >
-            {{ p.title | titlecase }}
-          </span>
-        </a>
-      </li>
-    </ul>
-  </nav>
+            <span
+              [ngClass]="topDistance > point ? 'md:py-10' : 'md:py-20'"
+              (click)="navOpen = !navOpen"
+            >
+              {{ p.title | titlecase }}
+            </span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </header>
