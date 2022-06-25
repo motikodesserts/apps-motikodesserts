@@ -1,15 +1,30 @@
-<div class="w-full">
+<div class="w-full relative mb-96">
   <app-page-header
     [title]="title"
     [img]="imgHeader"
     [description]="headerDescription"
   ></app-page-header>
-</div>
 
-<div class="p-32 relative">
-  <div class="absolute w-full h-96 p-32 bg-[#f9dde9] ml-16"></div>
-  <div
-    class="absolute bg-cover bg-center img-shadow-1 w-96 h-96 m-5 md:w-72 md:h-72"
-    [style.background-image]="'url(assets/img/home.jpg)'"
-  ></div>
+  <div class="py-4" *ngFor="let d of data; let i = index">
+    <app-left-card
+      *ngIf="(i + 1) % 2 === 0"
+      [title]="d.title"
+      [subtitle]="d.subtitle"
+      [img]="d.img"
+      [shortDescription]="d.shortDescription"
+      [description]="d.description"
+      [color]="colors[i]"
+      [index]="i"
+    ></app-left-card>
+    <app-right-card
+      *ngIf="(i + 1) % 2"
+      [title]="d.title"
+      [subtitle]="d.subtitle"
+      [img]="d.img"
+      [shortDescription]="d.shortDescription"
+      [description]="d.description"
+      [color]="colors[i]"
+      [index]="i"
+    ></app-right-card>
+  </div>
 </div>
