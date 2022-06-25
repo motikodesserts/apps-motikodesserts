@@ -4,10 +4,20 @@ import { CommonModule } from '@angular/common';
 import { AboutUsRoutingModule } from './about-us-routing.module';
 import { AboutUsComponent } from './about-us.component';
 import { PageHeaderModule } from '../../components/page-header/page-header.module';
+import { FooterModule } from '../../components/footer/footer.module';
+import { LeftCardModule } from '../../components/left-card/left-card.module';
+import { RightCardModule } from '../../components/right-card/right-card.module';
 
 @NgModule({
   declarations: [AboutUsComponent],
-  imports: [CommonModule, AboutUsRoutingModule, PageHeaderModule],
+  imports: [
+    CommonModule,
+    AboutUsRoutingModule,
+    PageHeaderModule,
+    FooterModule,
+    LeftCardModule,
+    RightCardModule,
+  ],
   exports: [AboutUsComponent],
 })
 export class AboutUsModule {}

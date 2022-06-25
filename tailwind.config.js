@@ -9,8 +9,12 @@ module.exports = {
         motikoBlue: "#E1E7EE",
         motikoOrange: "#FACCAD",
         motikoGreen: "#B4D3b2",
-        motikoRedOrange: "#F$DAD2",
+        motikoRedOrange: "#F4DAD2",
         motikoPink: "#DBCEE3",
+      },
+      spacing: {
+        100: "28rem",
+        128: "32rem",
       },
     },
   },
