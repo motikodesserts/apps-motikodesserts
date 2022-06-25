@@ -24,3 +24,7 @@ html {
   opacity: 1;
   fill: white;
 }
+
+ul {
+  @apply list-disc list-inside;
+}
