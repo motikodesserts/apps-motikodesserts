@@ -5,7 +5,7 @@
     [description]="headerDescription"
   ></app-page-header>
 
-  <div class="py-4" *ngFor="let d of data; let i = index">
+  <div class="list-style py-4" *ngFor="let d of data; let i = index">
     <app-left-card
       *ngIf="(i + 1) % 2 === 0"
       [title]="d.title"
