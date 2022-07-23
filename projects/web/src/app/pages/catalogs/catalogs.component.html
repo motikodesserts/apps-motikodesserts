@@ -1,1 +1,32 @@
-<p>catalogs works!</p>
+<div class="w-full relative">
+  <app-page-header
+    [title]="title"
+    [img]="imgHeader"
+    [description]="headerDescription"
+  ></app-page-header>
+
+  <div class="flex flex-wrap mx-16">
+    <div class="w-full">
+      <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
+        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+          <a
+            class="text-xl font-bold px-5 py-3 shadow-lg rounded block leading-normal text-pink-600 bg-white"
+            routerLink=""
+          >
+            <i class="fas fa-cog text-base mr-1"></i> {{ "HoReCa" }}
+          </a>
+        </li>
+        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+          <a
+            class="text-xl font-bold px-5 py-3 shadow-lg rounded block leading-normal text-pink-600 bg-white"
+            routerLink=""
+          >
+            <i class="fas fa-briefcase text-base mr-1"></i>
+            {{ "retail" | titlecase }}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>

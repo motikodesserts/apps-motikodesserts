@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-about-us',
@@ -80,7 +81,10 @@ export class AboutUsComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  constructor(private titleService: Title, private meta: Meta) {
+    this.titleService.setTitle('About Us');
+    this.meta.updateTag({ name: 'og:url', content: 'seo key' });
+  }
 
   ngOnInit(): void {}
 }

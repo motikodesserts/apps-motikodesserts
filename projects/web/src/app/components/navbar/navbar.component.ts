@@ -1,4 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { Catalog } from '../../shared/interfaces/catalog .interface';
+import { NavbarService } from './navbar.service';
 
 @Component({
   selector: 'app-navbar',
@@ -17,6 +19,8 @@ export class NavbarComponent implements OnInit {
     { title: 'contact', url: 'contact' },
   ];
 
+  catalogs!: Catalog[];
+
   @HostListener('window:scroll', ['$event']) // for window scroll events
   onScroll(e: any) {
     e.stopPropagation();
@@ -24,7 +28,11 @@ export class NavbarComponent implements OnInit {
     this.topDistance = pageYOffset;
   }
 
-  constructor() {}
+  constructor(private navbarService: NavbarService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.navbarService
+      .getCatalogs()
+      .subscribe((data) => (this.catalogs = data as any));
+  }
 }
