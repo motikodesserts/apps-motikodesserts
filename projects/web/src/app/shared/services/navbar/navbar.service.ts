@@ -8,13 +8,16 @@ import { environment } from '../../../../environments/environment';
   providedIn: 'root',
 })
 export class NavbarService {
-  public currentLanguage: string = 'en';
+  public currentLanguage!: string;
   constructor(
     private http: HttpClient,
     private translateService: TranslateService
   ) {
-    this.currentLanguage =
-      navigator.language || this.translateService.currentLang;
+    if (window?.navigator) {
+      this.currentLanguage = window?.navigator.language;
+    } else {
+      this.currentLanguage = this.translateService.currentLang;
+    }
   }
 
   getLanguages() {
