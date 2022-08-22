@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -6,11 +6,22 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'web';
+  reload = false;
 
-  constructor(private translateService: TranslateService) {
-    this.translateService.setDefaultLang(navigator.language);
-    this.translateService.use(navigator.language);
+  constructor(private translateService: TranslateService) {}
+  ngOnInit(): void {
+    if (window?.navigator.language) {
+      this.translateService.setDefaultLang(window?.navigator.language);
+      this.translateService.use(window?.navigator.language);
+    } else {
+      this.translateService.setDefaultLang('en');
+      this.translateService.use('en');
+    }
+    this.translateService.onLangChange.subscribe((event: HashChangeEvent) => {
+      this.reload = true;
+      setTimeout(() => (this.reload = false), 5000);
+    });
   }
 }
