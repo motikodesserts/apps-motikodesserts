@@ -19,6 +19,6 @@ export class ContactsComponent implements OnInit {
       from,
     };
 
-    this.http.post(`${environment.BASE_URL}/contact`, payload);
+    // this.http.post(`${environment.BASE_URL}/contact`, payload);
   }
 }

@@ -8,6 +8,11 @@ const routes: Routes = [
     component: CatalogsComponent,
     pathMatch: 'full',
   },
+  {
+    path: ':code',
+    component: CatalogsComponent,
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({

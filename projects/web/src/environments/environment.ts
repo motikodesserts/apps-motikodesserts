@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_URL: 'https://api-motikodesserts-3l22dytdvq-oa.a.run.app/api',
+  API_URL: 'http://localhost:8000/api',
 };
 
 /*

@@ -17,6 +17,38 @@ const routes: Routes = [
     path: 'catalogs',
     loadChildren: () =>
       import('./pages/catalogs/catalogs.module').then((m) => m.CatalogsModule),
+  },
+  {
+    path: 'products/:code',
+    loadChildren: () =>
+      import('./pages/product/product.module').then((m) => m.ProductModule),
+    pathMatch: 'full',
+  },
+  {
+    path: 'products',
+    loadChildren: () =>
+      import('./pages/products/products.module').then((m) => m.ProductsModule),
+    pathMatch: 'full',
+  },
+  {
+    path: 'categories',
+    loadChildren: () =>
+      import('./pages/categories/categories.module').then(
+        (m) => m.CategoriesModule
+      ),
+  },
+  {
+    path: 'contact',
+    loadChildren: () =>
+      import('./pages/contacts/contacts.module').then((m) => m.ContactsModule),
+    pathMatch: 'full',
+  },
+  {
+    path: '**',
+    loadChildren: () =>
+      import('./pages/page-not-found/page-not-found.module').then(
+        (m) => m.PageNotFoundModule
+      ),
     pathMatch: 'full',
   },
 ];

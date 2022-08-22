@@ -1,4 +1,5 @@
 <header
+  *ngIf="catalogs"
   class="text-border bg-gradient-to-b text-white animate__animated animate__fadeInDown text-xl z-40 w-full fixed md:justify-center items-center transition-[height] ease-in-out delay-450"
   [ngClass]="
     topDistance > point
@@ -42,7 +43,6 @@
         />
       </svg>
     </button>
-
     <nav
       class="w-full flex justify-center"
       [ngClass]="
@@ -51,6 +51,24 @@
           : 'bg-gradient-to-b from-black/[.50] md:-mt-5 '
       "
     >
+      <div
+        class="absolute top-2 md:top-4 right-2"
+        [ngClass]="topDistance > point ? '-mt-16' : 'mt-2'"
+      >
+        <select
+          class="bg-black/[.80] md:bg-black/[.01] p-2"
+          [ngModel]="navbarService.currentLanguage"
+          (ngModelChange)="setLanguage($event)"
+        >
+          <option
+            *ngFor="let lang of languages"
+            [value]="lang.code"
+            class="text-white md:text-black"
+          >
+            {{ lang.code | uppercase }}
+          </option>
+        </select>
+      </div>
       <ul
         class="list-none md fixed bg-black/[.80] md:bg-black/[.01] left-0 right-0 min-h-screen space-y-4 p-4 transform translate-x-full transition duration-200 md:relative md:flex md:min-h-0 md:space-y-0 md:space-x-6 md:translate-x-0"
         [ngClass]="navOpen ? 'translate-x-0' : 'translate-x-full'"
@@ -72,19 +90,75 @@
           </div>
           <button
             *ngIf="p.title"
-            [routerLink]="[p.url]"
+            [routerLink]="p.subMenus ? '' : [p.url]"
             routerLinkActive="active-link"
             class="text-white flex md:justify-center py-2 px-4 no-underline hover:underline"
             [ngClass]="topDistance > point ? 'p-2' : 'p-4'"
           >
             <span
               [ngClass]="topDistance > point ? 'md:py-10' : 'md:py-20'"
-              (click)="navOpen ? (navOpen = !navOpen) : (navOpen = navOpen)"
+              (click)="
+                navOpen && !p.subMenus
+                  ? (navOpen = !navOpen)
+                  : (navOpen = navOpen)
+              "
             >
-              {{ p.title | titlecase }}
+              <span *ngIf="!p.subMenus">
+                {{ "nav." + p.title | translate | titlecase }}
+              </span>
+              <div *ngIf="p.subMenus" class="flex justify-center">
+                <div>
+                  <div class="dropdown relative">
+                    <a
+                      class="dropdown-toggle md:px-6 transition duration-150 ease-in-out flex items-center text-white-700"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      (mouseenter)="showSubMenu = true"
+                    >
+                      {{ "nav." + p.title | translate | titlecase }}
+                      <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        data-prefix="fas"
+                        data-icon="caret-down"
+                        class="w-2 ml-2"
+                        role="img"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 320 512"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                        ></path>
+                      </svg>
+                    </a>
+                    <ul
+                      *ngIf="showSubMenu"
+                      class="dropdown-menu min-w-max absolute bg-white text-base z-51 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 m-0 bg-clip-padding border-none"
+                      aria-labelledby="dropdownMenuButton2"
+                      (mouseenter)="showSubMenu = true"
+                      (mouseleave)="showSubMenu = false"
+                    >
+                      <li class="w-36" *ngFor="let catalog of catalogs">
+                        <a
+                          class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
+                          [routerLink]="['catalogs/', catalog.catalog.code]"
+                          (click)="
+                            $event.stopPropagation();
+                            navOpen ? (navOpen = !navOpen) : (navOpen = navOpen)
+                          "
+                        >
+                          {{ catalog.name | titlecase }}
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </span>
           </button>
         </li>
+        <li class="cursor-pointer object-right-top"></li>
       </ul>
     </nav>
   </div>
