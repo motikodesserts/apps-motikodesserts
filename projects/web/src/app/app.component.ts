@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
 
   constructor(private translateService: TranslateService) {}
   ngOnInit(): void {
-    if (window?.navigator.language) {
+    if (typeof window !== 'undefined') {
       this.translateService.setDefaultLang(window?.navigator.language);
       this.translateService.use(window?.navigator.language);
     } else {
