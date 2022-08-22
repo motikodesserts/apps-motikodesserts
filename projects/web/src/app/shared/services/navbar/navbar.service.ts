@@ -13,7 +13,7 @@ export class NavbarService {
     private http: HttpClient,
     private translateService: TranslateService
   ) {
-    if (window?.navigator) {
+    if (typeof window !== 'undefined') {
       this.currentLanguage = window?.navigator.language;
     } else {
       this.currentLanguage = this.translateService.currentLang;
