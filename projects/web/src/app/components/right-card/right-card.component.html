@@ -30,9 +30,7 @@
         <h2 class="text-xl p-2">
           {{ subtitle | titlecase }}
         </h2>
-        <p>
-          {{ shortDescription }}
-        </p>
+        <div [innerHTML]="shortDescription"></div>
       </div>
       <div class="relative flex flex-col justify-center items-center mx-4">
         <div

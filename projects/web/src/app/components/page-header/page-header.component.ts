@@ -12,9 +12,5 @@ export class PageHeaderComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {
-    console.log(this.img);
-    console.log(this.title);
-    console.log(this.description);
-  }
+  ngOnInit(): void {}
 }
