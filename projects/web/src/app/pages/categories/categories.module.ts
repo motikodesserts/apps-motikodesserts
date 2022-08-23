@@ -6,6 +6,7 @@ import { CategoriesComponent } from './categories.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoryModule } from '../../components/category/category.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { PageHeaderModule } from '../../components/page-header/page-header.module';
 
 @NgModule({
   declarations: [CategoriesComponent],
@@ -15,6 +16,7 @@ import { TranslateModule } from '@ngx-translate/core';
     HttpClientModule,
     CategoryModule,
     TranslateModule,
+    PageHeaderModule,
   ],
 })
 export class CategoriesModule {}

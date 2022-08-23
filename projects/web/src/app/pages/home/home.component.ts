@@ -33,9 +33,9 @@ export class HomeComponent implements OnInit {
     });
     this.productService.getProducts().subscribe((data) => {
       this.data = data;
-      this.products = this.data.slice(0, 6);
+      this.products = this.data.slice(0, 8);
       this.pages = Array.from(
-        { length: Math.ceil(data.length / 6) },
+        { length: Math.ceil(data.length / 8) },
         (v, k) => k
       );
     });
@@ -54,6 +54,6 @@ export class HomeComponent implements OnInit {
     } else {
       this.page = p;
     }
-    this.products = this.data.slice(this.page * 6, this.page * 6 + 6);
+    this.products = this.data.slice(this.page * 8, this.page * 8 + 8);
   }
 }

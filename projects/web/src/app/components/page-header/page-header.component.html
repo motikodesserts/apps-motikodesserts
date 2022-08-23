@@ -1,4 +1,23 @@
 <div
-  class="bg-cover bg-center overflow-hidden w-full h-96"
+  class="bg-cover bg-center overflow-hidden w-full h-96 md:h-128"
   [style.background-image]="'url(' + img + ' )'"
-></div>
+>
+  <div class="top-0 h-full w-full bg-black bg-opacity-30">
+    <div
+      class="top-32 md:top-56 text-xl relative bg-gradient-to-r w-full h-full md:p-16 p-6 flex flex-col justify-between rounded-md"
+    >
+      <div>
+        <h1
+          class="md:text-5xl text-3xl font-bold md:leading-10 leading-9 text-white sm:w-auto w-64"
+        >
+          {{ name }}
+        </h1>
+        <p
+          class="text-lg leading-6 text-white xl:w-5/12 lg:w-8/12 md:w-10/12 2xl:pr-12 mt-4"
+        >
+          {{ description }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

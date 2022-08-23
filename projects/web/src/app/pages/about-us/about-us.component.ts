@@ -12,7 +12,7 @@ import { AboutUsService } from '../../shared/services/about-us/about-us.service'
 })
 export class AboutUsComponent implements OnInit {
   title = '';
-  imgHeader = 'assets/img/about.jpg';
+  imgHeader = 'assets/img/about.webp';
   headerDescription = ``;
   colors = ['#f9dde9', '#f1e0f3', '#e6e6e6', '#fdeed7'];
   lightColors = ['#ffe8f2', '#fce9ff', '#f1f1f1', '#ffffff'];
