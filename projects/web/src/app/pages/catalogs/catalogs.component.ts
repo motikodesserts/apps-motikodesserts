@@ -14,7 +14,7 @@ import { CategoryService } from '../../shared/services/category/category.service
 })
 export class CatalogsComponent implements OnInit {
   title = '';
-  imgHeader = 'assets/img/about.jpg';
+  imgHeader = 'assets/img/about.webp';
   headerDescription = ``;
   catalogCode!: string;
   catalog!: Catalog;

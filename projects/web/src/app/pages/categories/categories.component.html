@@ -1,51 +1,30 @@
-<div *ngIf="category" class="2xl:mx-auto w-full pt-20 md:pt-40">
-  <nav
-    class="pt-56 relative flex flex-wrap items-center justify-between py-3 text-gray-500 hover:text-gray-700 focus:text-gray-700 shadow-lg navbar navbar-expand-lg navbar-light"
-  >
-    <div
-      class="container-fluid flex flex-wrap items-center justify-between px-6"
-    >
-      <nav class="bg-gray-100 rounded-md p-2" aria-label="breadcrumb">
-        <ol class="list-reset flex">
-          <li>
-            <a routerLink="/" class="text-gray-500 hover:text-gray-600">
-              {{ "home" | translate | uppercase }}
-            </a>
-          </li>
-          <li><span class="text-gray-500 mx-2">/</span></li>
+<app-page-header
+  *ngIf="category"
+  [name]="category.name"
+  img="assets/img/home.webp"
+  [description]="category.description"
+></app-page-header>
 
-          <li><span class="text-gray-500 mx-2">/</span></li>
-          <li>
-            <a class="text-gray-500 hover:text-gray-600">
-              {{ category.name | titlecase }}</a
-            >
-          </li>
-        </ol>
-      </nav>
-    </div>
-  </nav>
-
-  <div
-    [style.background-image]="'url(assets/img/home.jpg)'"
-    class="relative rounded-md bg-cover bg-center h-52 md:h-96"
-  >
-    <div
-      class="text-xl relative bg-gradient-to-r w-full h-full top-0 md:p-16 p-6 flex flex-col justify-between rounded-md"
-    >
-      <div>
-        <h1
-          class="md:text-5xl text-3xl font-bold md:leading-10 leading-9 text-white sm:w-auto w-64"
-        >
-          {{ category.name }}
-        </h1>
-        <p
-          class="text-lg leading-6 text-white xl:w-5/12 lg:w-8/12 md:w-10/12 2xl:pr-12 mt-4"
-        >
-          {{ category.description }}
-        </p>
-      </div>
-    </div>
+<nav
+  class="flex flex-wrap items-center justify-between py-3 text-gray-500 hover:text-gray-700 focus:text-gray-700 shadow-lg navbar navbar-expand-lg navbar-light"
+>
+  <div class="container-fluid flex flex-wrap items-center justify-between px-6">
+    <nav class="bg-gray-100 rounded-md p-2" aria-label="breadcrumb">
+      <ol class="list-reset flex">
+        <li>
+          <a routerLink="/" class="text-gray-500 hover:text-gray-600">
+            {{ "home" | translate | uppercase }}
+          </a>
+        </li>
+        <li><span class="text-gray-500 mx-2">/</span></li>
+        <li>
+          <a class="text-gray-500 hover:text-gray-600">
+            {{ category.name | titlecase }}</a
+          >
+        </li>
+      </ol>
+    </nav>
   </div>
-</div>
+</nav>
 
 <app-category [categoryCode]="code"></app-category>

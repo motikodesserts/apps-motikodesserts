@@ -25,12 +25,6 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'products',
-    loadChildren: () =>
-      import('./pages/products/products.module').then((m) => m.ProductsModule),
-    pathMatch: 'full',
-  },
-  {
     path: 'categories',
     loadChildren: () =>
       import('./pages/categories/categories.module').then(

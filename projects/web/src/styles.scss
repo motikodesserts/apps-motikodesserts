@@ -3,12 +3,45 @@
 @import "tailwindcss/utilities";
 @import "~animate.css/animate.min";
 
+@font-face {
+  font-family: futura;
+  src: url("/assets/fonts/FuturaFuturisLightC.otf");
+}
+
+@font-face {
+  font-family: "PFAgoraSerifPro-Italic";
+  src: url("/assets/fonts/PFAgoraSerifPro-Italic.ttf");
+}
+
+@font-face {
+  font-family: "OpenSans-Light";
+  src: url("/assets/fonts/OpenSans-Light.ttf");
+}
+
 .text-border {
   -webkit-text-stroke: 0.3px black;
 }
 
 html {
   scroll-behavior: smooth;
+  // font-family: "OpenSans-Light";
+  font-family: futura;
+  font-size: large;
+}
+
+h1 {
+  font-family: futura;
+}
+
+p {
+  font-family: "OpenSans-Light";
+}
+
+h1,
+h2,
+h3,
+li {
+  font-family: "PFAgoraSerifPro-Italic";
 }
 
 .overlay-content {
