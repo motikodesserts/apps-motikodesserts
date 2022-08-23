@@ -19,6 +19,7 @@ export class CatalogsComponent implements OnInit {
   catalogCode!: string;
   catalog!: Catalog;
   categories!: Category[];
+  headerImg = Math.floor(Math.random() * 34);
 
   constructor(
     private route: ActivatedRoute,

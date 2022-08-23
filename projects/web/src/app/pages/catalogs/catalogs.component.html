@@ -1,24 +1,27 @@
 <app-page-header
   *ngIf="catalog"
   [name]="catalog.name"
-  img="assets/img/mochi-ciocolate.webp"
+  [img]="'assets/img/header/' + headerImg + '.webp'"
   [description]="catalog.description"
 ></app-page-header>
 
-<div *ngFor="let category of catalog.catalog.categories">
-  <div class="flex justify-center items-center p-4 md:p-24 bg-transparent">
-    <!-- The left line -->
-    <div class="flex-grow h-px bg-gray-400"></div>
+<div *ngIf="catalog && categories">
+  <div *ngFor="let category of catalog?.catalog?.categories">
+    <div class="flex justify-center items-center p-4 md:p-24 bg-transparent">
+      <!-- The left line -->
+      <div class="flex-grow h-px bg-gray-400"></div>
 
-    <!-- Your text here -->
-    <h2>
-      <span class="flex-shrink text-2xl text-gray-500 px-4 italic font-light">{{
-        getCategoryName(category.code)?.name
-      }}</span>
-    </h2>
-    <!-- The right line -->
-    <div class="flex-grow h-px bg-gray-400"></div>
+      <!-- Your text here -->
+      <h2>
+        <span
+          class="flex-shrink text-2xl text-gray-500 px-4 italic font-light"
+          >{{ getCategoryName(category.code)?.name }}</span
+        >
+      </h2>
+      <!-- The right line -->
+      <div class="flex-grow h-px bg-gray-400"></div>
+    </div>
+
+    <app-category [categoryCode]="category.code"></app-category>
   </div>
-
-  <app-category [categoryCode]="category.code"></app-category>
 </div>

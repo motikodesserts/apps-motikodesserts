@@ -6,12 +6,10 @@ const routes: Routes = [
   {
     path: '',
     component: CatalogsComponent,
-    pathMatch: 'full',
   },
   {
     path: ':code',
     component: CatalogsComponent,
-    pathMatch: 'full',
   },
 ];
 

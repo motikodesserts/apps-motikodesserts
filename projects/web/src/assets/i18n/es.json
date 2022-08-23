@@ -5,7 +5,7 @@
   "nav.contact": "contacto",
 
   "footer.address": "dirección",
-  "footer.contact": "contact9",
+  "footer.contact": "contacto",
   "franchise presentation": "Presentación de franquicias",
   "We thank you for being interested in our MOTIKO trade mark": "Le agradecemos su interés por nuestra marca MOTIKO",
   "HoReCa presentation": "Presentación HoReCa",
@@ -17,8 +17,19 @@
   "Go back to Homepage": "Volver a la página de inicio",
 
   "home": "inicio",
+  "contact": "contacto",
 
   "description": "Descripción",
   "Contact us": "Contacta con nosotros",
-  "If you have any questions about this product please contact us.": "Si tiene alguna pregunta sobre este producto, póngase en contacto con nosotros."
+  "If you have any questions about this product please contact us.": "Si tiene alguna pregunta sobre este producto, póngase en contacto con nosotros.",
+  "Get in touch": "Ponerse en contacto",
+  "Got a question about us? Are you interested in partnering with us? Have some suggestions or just want to say Hi? Just contact us. We are here to asset you.": "¿Tienes alguna pregunta sobre nosotros? ¿Estás interesado en asociarte con nosotros? ¿Tienes algunas sugerencias o simplemente quieres decir hola? Solo contáctenos. Estamos aquí para ayudarte.",
+  "Enter Details": "Ingrese los detalles",
+  "full name": "nombre completo",
+  "Email": "Email",
+  "Phone": "Teléfono",
+  "Message": "Mensaje",
+  "Submit": "Enviar",
+  "message sent successfully": "mensaje enviado correctamente",
+  "Close": "cerrar"
 }

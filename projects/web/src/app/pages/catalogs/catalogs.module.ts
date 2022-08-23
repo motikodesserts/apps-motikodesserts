@@ -15,6 +15,7 @@ import { ProductModule } from '../../components/product/product.module';
     PageHeaderModule,
     CategoryModule,
     ProductModule,
+    PageHeaderModule,
   ],
 })
 export class CatalogsModule {}
