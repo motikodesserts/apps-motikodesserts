@@ -15,6 +15,7 @@ export class ProductComponent implements OnInit {
   isToggle = 0;
   categories!: Category[];
   product!: Product;
+  headerImg = Math.floor(Math.random() * 34);
 
   constructor(
     private route: ActivatedRoute,

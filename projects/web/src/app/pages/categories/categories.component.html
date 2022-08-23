@@ -1,7 +1,7 @@
 <app-page-header
   *ngIf="category"
   [name]="category.name"
-  img="assets/img/home.webp"
+  [img]="'assets/img/header/' + headerImg + '.webp'"
   [description]="category.description"
 ></app-page-header>
 

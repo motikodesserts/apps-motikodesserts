@@ -13,6 +13,7 @@ import { ProductService } from '../../shared/services/product/product.service';
 export class CategoriesComponent implements OnInit {
   code!: string | null;
   category!: Category;
+  headerImg = Math.floor(Math.random() * 34);
 
   constructor(
     private categoryService: CategoryService,

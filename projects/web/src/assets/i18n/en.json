@@ -18,8 +18,19 @@
   "Go back to Homepage": "Go back to Homepage",
 
   "home": "home",
+  "contact": "contact",
 
   "description": "Description",
   "Contact us": "Contact us",
-  "If you have any questions about this product please contact us.": "If you have any questions about this product please contact us."
+  "If you have any questions about this product please contact us.": "If you have any questions about this product please contact us.",
+  "Get in touch": "Get in touch",
+  "Got a question about us? Are you interested in partnering with us? Have some suggestions or just want to say Hi? Just contact us. We are here to asset you.": "Got a question about us? Are you interested in partnering with us? Have some suggestions or just want to say Hi? Just contact us. We are here to asset you.",
+  "Enter Details": "Enter Details",
+  "full name": "full name",
+  "Email": "Email",
+  "Phone": "Phone",
+  "Message": "Message",
+  "Submit": "Submit",
+  "message sent successfully": "message sent successfully",
+  "Close": "Close"
 }
