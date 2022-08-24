@@ -38,6 +38,12 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
+    path: 'partners',
+    loadChildren: () =>
+      import('./pages/partners/partners.module').then((m) => m.PartnersModule),
+    pathMatch: 'full',
+  },
+  {
     path: '**',
     loadChildren: () =>
       import('./pages/page-not-found/page-not-found.module').then(

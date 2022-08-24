@@ -3,15 +3,16 @@ import { CommonModule } from '@angular/common';
 
 import { PartnersRoutingModule } from './partners-routing.module';
 import { PartnersComponent } from './partners.component';
-
+import { PageHeaderModule } from '../../components/page-header/page-header.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
-  declarations: [
-    PartnersComponent
-  ],
+  declarations: [PartnersComponent],
   imports: [
     CommonModule,
-    PartnersRoutingModule
-  ]
+    PartnersRoutingModule,
+    TranslateModule,
+    PageHeaderModule,
+  ],
 })
-export class PartnersModule { }
+export class PartnersModule {}

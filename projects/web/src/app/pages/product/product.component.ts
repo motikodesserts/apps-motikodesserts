@@ -28,7 +28,6 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
     this.route.url.subscribe((url) => {
       const code = this.route.snapshot.paramMap.get('code');
-      console.log(code);
       if (code) {
         this.categoryService.getCategories().subscribe((data) => {
           this.categories = data;
