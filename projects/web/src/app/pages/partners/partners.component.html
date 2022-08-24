@@ -1,1 +1,90 @@
-<p>partners works!</p>
+<app-page-header
+  name="{{ 'partners' | translate | titlecase }}"
+  [img]="'assets/img/partners/partners-motiko.webp'"
+  [description]=""
+></app-page-header>
+
+<div class="relative flex justify-center">
+  <div
+    class="relative h-80 md:h-96 lg:h-128 w-screen -mt-56 md:-mt-64 lg:-mt-72 bg-cover bg-center flex justify-center"
+    [style.background-image]="'url(assets/img/partners/partners.webp)'"
+  >
+    <h3
+      class="text-black text-4xl mt-32 lg:mt-48 lg:text-6xl text-center font-bold"
+    >
+      {{ "Hello" | translate | titlecase }}, <br />
+      {{ "dear Gourmand." | translate }}
+    </h3>
+  </div>
+</div>
+<hr class="bg-gray-700 m-2" />
+<div class="flex justify-center text-center">
+  <div class="w-5/6 text-lg">
+    <p>
+      {{
+        "We are happy to see you here. Even if you do not plan to become our partner and just want to know more about MOTIKO, we have something important to say."
+          | translate
+      }}
+    </p>
+    <p class="text-2xl">
+      {{
+        "Do you know the moments when things you do make you feel happy?"
+          | translate
+      }}
+    </p>
+    <p>
+      {{
+        "When at the end of the day you feel thankful and fulfilled? We know these feelings and want to share them with you."
+          | translate
+      }}
+    </p>
+    <p>
+      {{
+        "At MOTIKO we believe that sharing is caring, so we are always glad to cooperate with new companies and individuals who share our vision and goals."
+          | translate
+      }}
+    </p>
+    <p class="text-2xl">
+      {{ "And we invite you to be our partner." | translate }}
+    </p>
+    <p>
+      {{
+        "We can help you build your own company using our franchise. Do you want a branded shop? Or a small corner? Or a branded cafe? We will guide you through the whole process. And we will be there for you – from your very first steps."
+          | translate
+      }}
+    </p>
+    <p>
+      {{
+        "Or maybe you plan to use our product as a part of your existing business? Be sure to check our presentations – we have different options for companies who are willing to distribute our product or own an HoReCa-related company."
+          | translate
+      }}
+    </p>
+    <div class="flex justify-between md:text-xl text-sm md:p-8 m-2">
+      <a
+        class="p-2"
+        style="color: #ee3b68"
+        target="_blank"
+        href="https://storage.cloud.google.com/app_motikodesserts_bucket/pdf/MOTIKO-Brand-Shop-presentation.pdf"
+      >
+        {{ "Franchise presentation" | translate }}
+      </a>
+
+      <a
+        class="p-2"
+        style="color: #ee3b68"
+        target="_blank"
+        href="https://storage.cloud.google.com/app_motikodesserts_bucket/pdf/MOTIKO-Retail-presentation.pdf"
+      >
+        {{ "HoReCa presentation" | translate }}
+      </a>
+      <a
+        class="p-2"
+        style="color: #ee3b68"
+        target="_blank"
+        href="https://storage.googleapis.com/app_motikodesserts_bucket/pdf/MOTIKO-presentation-HORECA-FINAL-correct-03.02.pdf"
+      >
+        {{ "Retail presentation" | translate }}
+      </a>
+    </div>
+  </div>
+</div>
