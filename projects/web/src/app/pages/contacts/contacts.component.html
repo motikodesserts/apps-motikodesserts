@@ -81,7 +81,10 @@
     <div
       class="xl:w-3/5 lg:w-3/5 bg-gray-200 bg-opacity-30 h-full pt-5 pb-5 xl:pr-5 xl:pl-0 rounded-tr rounded-br"
     >
-      <form class="bg-white bg-opacity-30 py-4 px-8 rounded-tr rounded-br">
+      <form
+        class="bg-white bg-opacity-30 py-4 px-8 rounded-tr rounded-br"
+        #form="ngForm"
+      >
         <h1 class="text-4xl text-gray-800 font-extrabold mb-6">
           {{ "Enter Details" | translate | titlecase }}
         </h1>
@@ -92,7 +95,7 @@
                 for="name"
                 class="text-gray-800 text-sm font-semibold leading-tight tracking-normal mb-2"
               >
-                {{ "full name" | translate | titlecase }}
+                {{ "full name" | translate | titlecase }} *
               </label>
               <input
                 required
@@ -110,7 +113,7 @@
                 for="email"
                 class="text-gray-800 text-sm font-semibold leading-tight tracking-normal mb-2"
               >
-                {{ "Email" | translate | titlecase }}
+                {{ "Email" | translate | titlecase }} *
               </label>
               <input
                 required
@@ -133,7 +136,6 @@
                 {{ "Phone" | translate | titlecase }}
               </label>
               <input
-                required
                 [(ngModel)]="phone"
                 name="phone"
                 type="tel"
@@ -149,7 +151,7 @@
               class="text-sm font-semibold text-gray-800 mb-2"
               for="message"
             >
-              {{ "Message" | translate | titlecase }}
+              {{ "Message" | translate | titlecase }} *
             </label>
             <textarea
               placeholder=""
@@ -167,8 +169,16 @@
               {{ "message sent successfully" | translate | titlecase }}
             </div>
           </div>
+          <div
+            *ngIf="errorMsg"
+            class="z-40 -bottom-8 md:bottom-10 mx-auto w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
+          >
+            <div class="text-base font-normal text-center text-red-700">
+              {{ "fields with * are required" | translate | titlecase }}
+            </div>
+          </div>
           <button
-            (click)="sendEmail()"
+            (click)="send(form)"
             class="focus:outline-none bg-red-700 transition duration-150 ease-in-out hover:bg-red-600 rounded text-white px-8 py-3 text-sm leading-6"
           >
             {{ "Submit" | translate | titlecase }}
