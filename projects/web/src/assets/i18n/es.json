@@ -32,6 +32,7 @@
   "Submit": "Enviar",
   "message sent successfully": "mensaje enviado correctamente",
   "Close": "cerrar",
+  "fields with * are required": "los campos con * son obligatorios",
 
   "Hello": "hola",
   "dear Gourmand.": "Querido Gourmand.",

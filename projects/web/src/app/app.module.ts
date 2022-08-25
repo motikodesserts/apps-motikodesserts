@@ -13,6 +13,8 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ServerErrorHandler } from './shared/interceptors/server-error-handler.interceptor';
+import { RecaptchaV3Module, RECAPTCHA_V3_SITE_KEY } from 'ng-recaptcha';
+import { environment } from '../environments/environment';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -34,8 +36,15 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppRoutingModule,
     NavbarModule,
     FooterModule,
+    RecaptchaV3Module,
   ],
-  providers: [{ provide: ErrorHandler, useClass: ServerErrorHandler }],
+  providers: [
+    { provide: ErrorHandler, useClass: ServerErrorHandler },
+    {
+      provide: RECAPTCHA_V3_SITE_KEY,
+      useValue: environment.recaptcha.siteKey,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

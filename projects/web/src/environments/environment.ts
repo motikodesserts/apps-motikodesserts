@@ -6,6 +6,9 @@ export const environment = {
   production: false,
   API_URL: 'http://localhost:8000/api',
   siteId: 'motikodessertsApp',
+  recaptcha: {
+    siteKey: '6LcGZqYhAAAAAN-2MOkKYxpqKs5ci2yIDERfPOjt',
+  },
 };
 
 /*
