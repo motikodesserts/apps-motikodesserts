@@ -177,6 +177,26 @@
               {{ "fields with * are required" | translate | titlecase }}
             </div>
           </div>
+
+          <re-captcha
+            id="recaptcha"
+            name="recaptcha"
+            #recaptcha="ngModel"
+            [(ngModel)]="token"
+            required
+            [class.is-invalid]="
+              recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)
+            "
+          ></re-captcha>
+          <div
+            *ngIf="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"
+            class="invalid-feedback"
+          >
+            <div *ngIf="recaptcha.errors?.['required']">
+              This field is required.
+            </div>
+          </div>
+
           <button
             (click)="send(form)"
             class="focus:outline-none bg-red-700 transition duration-150 ease-in-out hover:bg-red-600 rounded text-white px-8 py-3 text-sm leading-6"
