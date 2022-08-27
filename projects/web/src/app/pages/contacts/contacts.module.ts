@@ -6,7 +6,8 @@ import { ContactsComponent } from './contacts.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PageHeaderModule } from '../../components/page-header/page-header.module';
 import { TranslateModule } from '@ngx-translate/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RecaptchaV3Module } from 'ng-recaptcha';
 
 @NgModule({
   declarations: [ContactsComponent],
@@ -17,6 +18,8 @@ import { FormsModule } from '@angular/forms';
     PageHeaderModule,
     TranslateModule,
     FormsModule,
+    ReactiveFormsModule,
+    RecaptchaV3Module,
   ],
 })
 export class ContactsModule {}

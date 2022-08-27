@@ -18,11 +18,14 @@ export class ContactsComponent implements OnInit {
   headerImg = Math.floor(Math.random() * 34);
   successMsg = false;
   errorMsg = false;
+  token: string | undefined;
 
   constructor(
     private http: HttpClient,
     private recaptchaV3Service: ReCaptchaV3Service
-  ) {}
+  ) {
+    this.token = undefined;
+  }
 
   ngOnInit(): void {}
 
@@ -38,25 +41,20 @@ export class ContactsComponent implements OnInit {
       return;
     }
 
-    console.log(form);
-
     this.recaptchaV3Service
       .execute('importantAction')
       .subscribe((token: string) => {
         console.debug(`Token [${token}] generated`);
+        if (token) {
+          this.successMsg = true;
+          this.http
+            .post(`${environment.API_URL}/contact/`, form.value)
+            .subscribe((data) => {
+              setTimeout(() => {
+                this.successMsg = false;
+              }, 5000);
+            });
+        }
       });
-
-    try {
-      this.successMsg = true;
-      this.http
-        .post(`${environment.API_URL}/contact/`, form.value)
-        .subscribe((data) => {
-          setTimeout(() => {
-            this.successMsg = false;
-          }, 5000);
-        });
-    } catch (error) {
-      console.log(error);
-    }
   }
 }
