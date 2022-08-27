@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ReCaptchaV3Service } from 'ng-recaptcha';
 import { environment } from '../../../environments/environment';
@@ -22,6 +22,7 @@ export class ContactsComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
+    private renderer: Renderer2,
     private recaptchaV3Service: ReCaptchaV3Service
   ) {
     this.token = undefined;
@@ -56,5 +57,9 @@ export class ContactsComponent implements OnInit {
             });
         }
       });
+  }
+
+  ngOnDestroy() {
+    this.renderer.removeClass(document.body, 'recaptcha');
   }
 }
