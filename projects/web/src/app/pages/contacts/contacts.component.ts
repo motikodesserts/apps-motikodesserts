@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ReCaptchaV3Service } from 'ng-recaptcha';
 import { environment } from '../../../environments/environment';
@@ -9,7 +9,7 @@ import { environment } from '../../../environments/environment';
   templateUrl: './contacts.component.html',
   styleUrls: ['./contacts.component.scss'],
 })
-export class ContactsComponent implements OnInit {
+export class ContactsComponent implements OnInit, OnDestroy {
   message!: string;
   subject!: string;
   email!: string;
@@ -28,7 +28,9 @@ export class ContactsComponent implements OnInit {
     this.token = undefined;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.renderer.addClass(document.body, 'recaptcha');
+  }
 
   send(form: NgForm): void {
     if (form.invalid) {
