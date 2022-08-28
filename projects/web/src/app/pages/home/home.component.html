@@ -19,22 +19,22 @@
     class="container min-w-full m-0 p-0 fixed bottom-0 mx-auto bg-gradient-to-b from-black/[.50]"
   >
     <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 content-center"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 content-center"
     >
-      <div class="flex justify-center border-2 rounded-xl p-6 m-2">
+      <div class="flex justify-center border-2 rounded-xl p-2 md:p-6 m-2">
         <a
           target="_blank"
           title=""
-          href="https://storage.cloud.google.com/app_motikodesserts_bucket/pdf/MOTIKO-Brand-Shop-presentation.pdf?_ga=2.27101627.-72010560.1654761194"
+          href="https://storage.cloud.google.com/app_motikodesserts_bucket/pdf/MOTIKO-Brand-Shop-presentation.pdf"
         >
-          <div class="relative text-center pb-2">
+          <div class="relative text-center pb-1 md:pb-2 text-sm md:text-base">
             <h5 style="color: #fff; font-weight: 700 !important">
               {{ "franchise presentation" | translate | titlecase }} »
             </h5>
           </div>
 
           <div class="text-center">
-            <p class="text-white uppercase text-xl md:text-sm">
+            <p class="text-white uppercase text-xl hidden md:block">
               {{
                 "We thank you for being interested in our MOTIKO trade mark"
                   | translate
@@ -43,20 +43,22 @@
           </div>
         </a>
       </div>
-      <div class="flex justify-center border-2 rounded-xl p-6 m-2">
+      <div
+        class="flex justify-center border-2 rounded-xl p-2 md:p-6 m-1 md:m-2"
+      >
         <a
           target="_blank"
           title=""
-          href="https://storage.cloud.google.com/app_motikodesserts_bucket/pdf/MOTIKO-Retail-presentation.pdf"
+          href="https://storage.googleapis.com/app_motikodesserts_bucket/pdf/MOTIKO-presentation-HORECA-FINAL-correct-03.02.pdf"
         >
-          <div class="relative text-center pb-2">
+          <div class="relative text-center pb-1 md:pb-2">
             <h5 style="color: #fff; font-weight: 700 !important">
               {{ "HoReCa presentation" | translate | titlecase }} »
             </h5>
           </div>
 
           <div class="text-center">
-            <p class="text-white uppercase text-xl md:text-sm">
+            <p class="text-white uppercase text-xl hidden md:block">
               {{
                 "We thank you for being interested in our MOTIKO trade mark"
                   | translate
@@ -65,20 +67,22 @@
           </div>
         </a>
       </div>
-      <div class="flex justify-center border-2 rounded-xl p-6 m-2">
+      <div
+        class="flex justify-center border-2 rounded-xl p-2 md:p-6 m-1 md:m-2"
+      >
         <a
           target="_blank"
           title=""
-          href="https://storage.googleapis.com/app_motikodesserts_bucket/pdf/MOTIKO-presentation-HORECA-FINAL-correct-03.02.pdf"
+          href="https://storage.googleapis.com/app_motikodesserts_bucket/pdf/MOTIKO-Retail-presentation.pdf"
         >
-          <div class="relative text-center pb-2">
+          <div class="relative text-center pb-1 md:pb2">
             <h5 style="color: #fff; font-weight: 700 !important">
-              {{ "franchise presentation" | translate | titlecase }} »
+              {{ "Retail presentation" | translate | titlecase }} »
             </h5>
           </div>
 
           <div class="text-center">
-            <p class="text-white uppercase text-xl md:text-sm">
+            <p class="text-white uppercase text-xl hidden md:block">
               {{
                 "We thank you for being interested in our MOTIKO trade mark"
                   | translate
