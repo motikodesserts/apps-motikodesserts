@@ -48,17 +48,19 @@ export class NavbarComponent implements OnInit {
     public navbarService: NavbarService,
     private translateService: TranslateService,
     private catalogService: CatalogService
-  ) {
+  ) {}
+
+  ngOnInit(): void {
     this.catalogService
       .getCatalogs()
       .subscribe((data) => (this.catalogs = data as any));
-    this.navbarService
-      .getLanguages()
-      .subscribe((data) => (this.languages = data as any));
-  }
 
-  ngOnInit(): void {
-    console.log(this.translateService.currentLang);
+    this.navbarService.getLanguages().subscribe((data) => {
+      this.languages = data as any;
+      this.catalogService
+        .getCatalogs()
+        .subscribe((data) => (this.catalogs = data as any));
+    });
   }
 
   setLanguage(lang: string) {
