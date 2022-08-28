@@ -16,7 +16,7 @@
         topDistance > point ? 'animate__animated animate__fadeInDown' : ''
       "
     >
-      <div class="md:hidden ml-10">
+      <div class="md:hidden lg:ml-10">
         <a routerLink="/">
           <img
             class="h-16"
@@ -82,7 +82,8 @@
             <img
               *ngIf="!p.title"
               [routerLink]="[p.url]"
-              class="h-0 my-8 mx-16"
+              class="max-w-full h-auto"
+              class="my-8 lg:mx-16 w-auto h-32"
               [ngClass]="topDistance > point ? 'md:h-16' : 'md:h-32'"
               [src]="'assets/img/logo-white.png'"
               alt="motkodesserts logo"
