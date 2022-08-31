@@ -14,7 +14,10 @@ export class NavbarService {
     private translateService: TranslateService
   ) {
     if (typeof window !== 'undefined') {
-      this.currentLanguage = window?.navigator.language;
+      const lang = window?.navigator.language.includes('-')
+        ? window?.navigator.language.split('-')[0]
+        : window?.navigator.language;
+      this.currentLanguage = lang;
     } else {
       this.currentLanguage = this.translateService.currentLang;
     }
