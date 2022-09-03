@@ -7,11 +7,6 @@ const routes: Routes = [
     path: '',
     component: ProductComponent,
   },
-  {
-    path: '',
-    component: ProductComponent,
-    pathMatch: 'full',
-  },
 ];
 
 @NgModule({
