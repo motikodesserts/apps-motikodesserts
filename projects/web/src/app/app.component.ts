@@ -22,6 +22,11 @@ export class AppComponent implements OnInit {
       this.translateService.setDefaultLang('en');
       this.translateService.use('en');
     }
+
+    document
+      .querySelector('html')
+      ?.setAttribute('lang', this.translateService.currentLang);
+
     this.translateService.onLangChange.subscribe((event: HashChangeEvent) => {
       this.reload = true;
       setTimeout(() => (this.reload = false), 5000);
