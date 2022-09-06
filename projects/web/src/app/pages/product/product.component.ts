@@ -51,12 +51,13 @@ export class ProductComponent implements OnInit {
     this.metaService.updateTag({
       name: this.product.name,
       content: this.product.short_description.replace(/<\/?[^>]+(>|$)/g, ''),
-      ogTitle: this.product.name,
-      ogDescription: this.product.short_description.replace(
+      'og:title': this.product.name,
+      'og:description': this.product.short_description.replace(
         /<\/?[^>]+(>|$)/g,
         ''
       ),
-      ogImage: this.product.product.images[0].image,
+      'og;image': this.product.product.images[0].image,
+      'og:image:secure_url': this.product.product.images[0].image,
     });
   }
 }
