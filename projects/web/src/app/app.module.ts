@@ -2,6 +2,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import {
   BrowserModule,
   BrowserTransferStateModule,
+  Meta,
   TransferState,
 } from '@angular/platform-browser';
 
@@ -44,6 +45,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       provide: RECAPTCHA_V3_SITE_KEY,
       useValue: environment.recaptcha.siteKey,
     },
+    Meta,
   ],
   bootstrap: [AppComponent],
 })

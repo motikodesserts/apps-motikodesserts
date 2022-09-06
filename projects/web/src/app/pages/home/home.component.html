@@ -113,7 +113,7 @@
           >
             <a
               class="overflow-hidden mt-36"
-              [routerLink]="'products/' + product.product.code"
+              [routerLink]="'products/' + product.slug"
             >
               <img
                 class="overflow-hidden rounded-t-full group-hover:opacity-60 transition duration-500"
@@ -129,7 +129,7 @@
                 <p
                   class="text-center group-hover:opacity-60 transition duration-500 text-xl leading-5 text-white"
                 >
-                  <a [routerLink]="['products/', product.product.code]">
+                  <a [routerLink]="['products/', product.slug]">
                     {{ product.name }}
                   </a>
                 </p>

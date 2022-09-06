@@ -19,7 +19,7 @@ const routes: Routes = [
       import('./pages/catalogs/catalogs.module').then((m) => m.CatalogsModule),
   },
   {
-    path: 'products/:code',
+    path: 'products/:slug',
     loadChildren: () =>
       import('./pages/product/product.module').then((m) => m.ProductModule),
     pathMatch: 'full',
