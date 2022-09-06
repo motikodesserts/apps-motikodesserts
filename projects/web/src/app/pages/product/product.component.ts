@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Category } from '../../shared/interfaces/category.interface';
@@ -22,7 +23,8 @@ export class ProductComponent implements OnInit {
     private productService: ProductService,
     private categoryService: CategoryService,
     private titleService: Title,
-    private metaService: Meta
+    private metaService: Meta,
+    @Inject(DOCUMENT) private document: Document
   ) {
     this.route.url.subscribe((url) => {
       const slug = this.route.snapshot.paramMap.get('slug');
@@ -75,6 +77,22 @@ export class ProductComponent implements OnInit {
     this.metaService.updateTag({
       property: 'og:image:secure_url',
       content: this.product.product.images[0].image,
+    });
+    this.metaService.updateTag({
+      property: 'og:url',
+      content: this.document.location.href,
+    });
+    this.metaService.updateTag({
+      property: 'og:locale',
+      content: 'en_us',
+    });
+    this.metaService.updateTag({
+      property: 'og:locale:alternate',
+      content: 'en_GB',
+    });
+    this.metaService.updateTag({
+      property: 'og:locale:alternate',
+      content: 'es_ES',
     });
   }
 }
