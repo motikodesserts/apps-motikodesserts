@@ -31,4 +31,10 @@ export class ProductService {
       `${environment.API_URL}/${this.translateService.currentLang}/products/?product__code=${code}`
     );
   }
+
+  getProductBySlug(slug: string): Observable<any> {
+    return this.http.get(
+      `${environment.API_URL}/${this.translateService.currentLang}/products/?slug=${slug}`
+    );
+  }
 }
