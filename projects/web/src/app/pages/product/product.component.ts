@@ -23,9 +23,7 @@ export class ProductComponent implements OnInit {
     private categoryService: CategoryService,
     private titleService: Title,
     private metaService: Meta
-  ) {}
-
-  ngOnInit(): void {
+  ) {
     this.route.url.subscribe((url) => {
       const slug = this.route.snapshot.paramMap.get('slug');
       if (slug) {
@@ -43,21 +41,40 @@ export class ProductComponent implements OnInit {
     });
   }
 
+  ngOnInit(): void {}
+
   getCategoryName(code: any) {
     return this.categories.find((el) => el.category.code === code);
   }
 
   addTag() {
     this.metaService.updateTag({
-      name: this.product.name,
+      property: 'name',
+      content: this.product.name,
+    });
+    this.metaService.updateTag({
+      property: 'content',
       content: this.product.short_description.replace(/<\/?[^>]+(>|$)/g, ''),
-      'og:title': this.product.name,
-      'og:description': this.product.short_description.replace(
-        /<\/?[^>]+(>|$)/g,
-        ''
-      ),
-      'og;image': this.product.product.images[0].image,
-      'og:image:secure_url': this.product.product.images[0].image,
+    });
+    this.metaService.updateTag({
+      property: 'og:title',
+      content: this.product.name,
+    });
+    this.metaService.updateTag({
+      property: 'og:description',
+      content: this.product.short_description.replace(/<\/?[^>]+(>|$)/g, ''),
+    });
+    this.metaService.updateTag({
+      property: 'og:description',
+      content: this.product.short_description.replace(/<\/?[^>]+(>|$)/g, ''),
+    });
+    this.metaService.updateTag({
+      property: 'og:image',
+      content: this.product.product.images[0].image,
+    });
+    this.metaService.updateTag({
+      property: 'og:image:secure_url',
+      content: this.product.product.images[0].image,
     });
   }
 }
