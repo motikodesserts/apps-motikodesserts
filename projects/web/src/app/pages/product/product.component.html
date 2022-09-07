@@ -20,7 +20,10 @@
         <li><span class="text-gray-500 mx-2">/</span></li>
         <li>
           <a
-            [routerLink]="['/categories/', product.product.categories[0].code]"
+            [routerLink]="[
+              '/' + ('categories' | translate) + '/',
+              product.product.categories[0].code
+            ]"
             class="text-gray-500 hover:text-gray-600"
           >
             {{ getCategoryName(product.product.categories[0].code)?.name }}</a

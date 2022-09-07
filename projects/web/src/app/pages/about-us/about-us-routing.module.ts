@@ -5,8 +5,8 @@ import { AboutUsComponent } from './about-us.component';
 const routes: Routes = [
   {
     path: '',
+    data: { title: 'about-us' },
     component: AboutUsComponent,
-    pathMatch: 'full',
   },
 ];
 

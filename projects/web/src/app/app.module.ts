@@ -16,6 +16,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ServerErrorHandler } from './shared/interceptors/server-error-handler.interceptor';
 import { RecaptchaV3Module, RECAPTCHA_V3_SITE_KEY } from 'ng-recaptcha';
 import { environment } from '../environments/environment';
+import { NgxTranslateRoutesModule } from 'ngx-translate-routes';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -28,11 +29,16 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserTransferStateModule,
     TranslateModule.forRoot({
       defaultLanguage: 'en',
+      useDefaultLang: true,
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
         deps: [HttpClient, TransferState],
       },
+    }),
+    NgxTranslateRoutesModule.forRoot({
+      enableRouteTranslate: true,
+      enableTitleTranslate: true,
     }),
     AppRoutingModule,
     NavbarModule,
