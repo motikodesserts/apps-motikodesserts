@@ -7,6 +7,8 @@ import { PageHeaderModule } from '../../components/page-header/page-header.modul
 import { FooterModule } from '../../components/footer/footer.module';
 import { LeftCardModule } from '../../components/left-card/left-card.module';
 import { RightCardModule } from '../../components/right-card/right-card.module';
+import { TranslateModule } from '@ngx-translate/core';
+import { NgxTranslateRoutesModule } from 'ngx-translate-routes';
 
 @NgModule({
   declarations: [AboutUsComponent],
@@ -17,6 +19,8 @@ import { RightCardModule } from '../../components/right-card/right-card.module';
     FooterModule,
     LeftCardModule,
     RightCardModule,
+    TranslateModule,
+    NgxTranslateRoutesModule,
   ],
   exports: [AboutUsComponent],
 })

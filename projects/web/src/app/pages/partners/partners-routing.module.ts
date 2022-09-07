@@ -5,6 +5,7 @@ import { PartnersComponent } from './partners.component';
 const routes: Routes = [
   {
     path: '',
+    data: { title: 'partners' },
     component: PartnersComponent,
   },
 ];

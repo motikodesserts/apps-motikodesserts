@@ -11,7 +11,6 @@ const routes: Routes = [
     path: 'about-us',
     loadChildren: () =>
       import('./pages/about-us/about-us.module').then((m) => m.AboutUsModule),
-    pathMatch: 'full',
   },
   {
     path: 'catalogs',
@@ -39,6 +38,47 @@ const routes: Routes = [
   },
   {
     path: 'partners',
+    loadChildren: () =>
+      import('./pages/partners/partners.module').then((m) => m.PartnersModule),
+    pathMatch: 'full',
+  },
+  // es language
+  {
+    path: '',
+    loadChildren: () =>
+      import('./pages/home/home.module').then((m) => m.HomeModule),
+  },
+  {
+    path: 'sobre-nosotros',
+    loadChildren: () =>
+      import('./pages/about-us/about-us.module').then((m) => m.AboutUsModule),
+  },
+  {
+    path: 'catalogos',
+    loadChildren: () =>
+      import('./pages/catalogs/catalogs.module').then((m) => m.CatalogsModule),
+  },
+  {
+    path: 'productos/:slug',
+    loadChildren: () =>
+      import('./pages/product/product.module').then((m) => m.ProductModule),
+    pathMatch: 'full',
+  },
+  {
+    path: 'categorias',
+    loadChildren: () =>
+      import('./pages/categories/categories.module').then(
+        (m) => m.CategoriesModule
+      ),
+  },
+  {
+    path: 'contacto',
+    loadChildren: () =>
+      import('./pages/contacts/contacts.module').then((m) => m.ContactsModule),
+    pathMatch: 'full',
+  },
+  {
+    path: 'colaboradores',
     loadChildren: () =>
       import('./pages/partners/partners.module').then((m) => m.PartnersModule),
     pathMatch: 'full',
