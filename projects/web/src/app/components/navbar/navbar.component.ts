@@ -17,32 +17,14 @@ interface Language {
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  topDistance = 0;
-  point = 50;
   navOpen = false;
   languages!: Language[];
+  lang!: string;
 
   showSubMenu = false;
 
   catalogs!: Catalog[];
-  public pages = [
-    { title: 'about_us', url: 'about-us' },
-    {
-      title: 'catalogs',
-      url: 'catalogs',
-      subMenus: true,
-    },
-    { title: '', url: '/' },
-    { title: 'for_partners', url: 'partners' },
-    { title: 'contact', url: 'contact' },
-  ];
-
-  @HostListener('window:scroll', ['$event']) // for window scroll events
-  onScroll(e: any) {
-    e.stopPropagation();
-    const { pageYOffset } = window;
-    this.topDistance = pageYOffset;
-  }
+  public pages = [] as any;
 
   constructor(
     public navbarService: NavbarService,
@@ -61,6 +43,16 @@ export class NavbarComponent implements OnInit {
         .getCatalogs()
         .subscribe((data) => (this.catalogs = data as any));
     });
+    this.lang = this.translateService.currentLang;
+
+    this.pages.push(
+      { title: 'catalogs', url: `${this.lang}/catalogs`, subMenus: true },
+      { title: 'for_partners', url: `${this.lang}/partners` },
+      { title: ``, url: `${this.lang}/` },
+      { title: 'about_us', url: `${this.lang}/about-us` },
+      { title: 'contact', url: `${this.lang}/contact` }
+    );
+    console.log(this.lang, '----------------');
   }
 
   setLanguage(lang: string) {

@@ -1,96 +1,30 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
 @import "~animate.css/animate.min";
 
-@font-face {
-  font-family: futura;
-  src: url("/assets/fonts/FuturaFuturisLightC.otf");
+// navbar
+.navbar {
+  .navbar-nav {
+    .nav-link {
+      position: relative;
+      color: #000000;
+      font-size: 1.1em;
+    }
+    .a::after {
+      content: "";
+      width: 25px;
+      height: 4px;
+      background: #f87170;
+      position: absolute;
+      bottom: -4px;
+      left: 0.5rem;
+    }
+    .nav-link:hover::after {
+      content: "";
+      width: 25px;
+      height: 4px;
+      background: #f87170;
+      position: absolute;
+      bottom: -4px;
+      left: 0.5rem;
+    }
+  }
 }
-
-@font-face {
-  font-family: "PFAgoraSerifPro-Italic";
-  src: url("/assets/fonts/PFAgoraSerifPro-Italic.ttf");
-}
-
-@font-face {
-  font-family: "OpenSans-Light";
-  src: url("/assets/fonts/OpenSans-Light.ttf");
-}
-
-.text-border {
-  -webkit-text-stroke: 0.3px black;
-}
-
-html {
-  scroll-behavior: smooth;
-  // font-family: "OpenSans-Light";
-  font-family: futura;
-  font-size: large;
-}
-
-h1 {
-  font-family: futura;
-}
-
-p {
-  font-family: "OpenSans-Light";
-}
-
-h1,
-h2,
-li {
-  font-family: "PFAgoraSerifPro-Italic";
-}
-
-.overlay-content {
-  overflow: hidden;
-}
-.overlay {
-  position: absolute;
-  left: -18rem;
-  bottom: -10rem;
-  width: 55rem;
-  transition: transform 0.5s 0.5s, opacity 0.2s 0.5s;
-  // transform: translate3d(0%, -50%, 0);
-  opacity: 1;
-  fill: white;
-}
-
-ul {
-  @apply list-disc list-inside;
-}
-
-/* hide recaptcha badge*/
-.grecaptcha-badge {
-  visibility: hidden;
-}
-
-/* only show recaptcha badge on needed pages */
-body.recaptcha .grecaptcha-badge {
-  visibility: visible;
-}
-
-// scroll bar
-/* width */
-::-webkit-scrollbar {
-  width: 0.5rem;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px white;
-  border-radius: 10px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: rgba($color: #000000, $alpha: 0.4);
-  border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: rgba($color: #000000, $alpha: 0.7);
-}
-// end scroll

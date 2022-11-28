@@ -1,5 +1,9 @@
-.active-link {
-  text-decoration: underline;
-  color: #fff;
-  font-size: bold;
+.active-link::after {
+  content: "";
+  width: 25px;
+  height: 4px;
+  background: #f87170;
+  position: absolute;
+  bottom: -4px;
+  left: 1rem;
 }

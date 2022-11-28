@@ -3,82 +3,82 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'en',
     loadChildren: () =>
       import('./pages/home/home.module').then((m) => m.HomeModule),
   },
   {
-    path: 'about-us',
+    path: 'en/about-us',
     loadChildren: () =>
       import('./pages/about-us/about-us.module').then((m) => m.AboutUsModule),
   },
   {
-    path: 'catalogs',
+    path: 'en/catalogs',
     loadChildren: () =>
       import('./pages/catalogs/catalogs.module').then((m) => m.CatalogsModule),
   },
   {
-    path: 'products/:slug',
+    path: 'en/products/:slug',
     loadChildren: () =>
       import('./pages/product/product.module').then((m) => m.ProductModule),
     pathMatch: 'full',
   },
   {
-    path: 'categories',
+    path: 'en/categories',
     loadChildren: () =>
       import('./pages/categories/categories.module').then(
         (m) => m.CategoriesModule
       ),
   },
   {
-    path: 'contact',
+    path: 'en/contact',
     loadChildren: () =>
       import('./pages/contacts/contacts.module').then((m) => m.ContactsModule),
     pathMatch: 'full',
   },
   {
-    path: 'partners',
+    path: 'en/partners',
     loadChildren: () =>
       import('./pages/partners/partners.module').then((m) => m.PartnersModule),
     pathMatch: 'full',
   },
   // es language
   {
-    path: '',
+    path: 'es',
     loadChildren: () =>
       import('./pages/home/home.module').then((m) => m.HomeModule),
   },
   {
-    path: 'sobre-nosotros',
+    path: 'es/sobre-nosotros',
     loadChildren: () =>
       import('./pages/about-us/about-us.module').then((m) => m.AboutUsModule),
   },
   {
-    path: 'catalogos',
+    path: 'es/catalogos',
     loadChildren: () =>
       import('./pages/catalogs/catalogs.module').then((m) => m.CatalogsModule),
   },
   {
-    path: 'productos/:slug',
+    path: 'es/productos/:slug',
     loadChildren: () =>
       import('./pages/product/product.module').then((m) => m.ProductModule),
     pathMatch: 'full',
   },
   {
-    path: 'categorias',
+    path: 'es/categorias',
     loadChildren: () =>
       import('./pages/categories/categories.module').then(
         (m) => m.CategoriesModule
       ),
   },
   {
-    path: 'contacto',
+    path: 'es/contacto',
     loadChildren: () =>
       import('./pages/contacts/contacts.module').then((m) => m.ContactsModule),
     pathMatch: 'full',
   },
   {
-    path: 'colaboradores',
+    path: 'es/colaboradores',
     loadChildren: () =>
       import('./pages/partners/partners.module').then((m) => m.PartnersModule),
     pathMatch: 'full',
