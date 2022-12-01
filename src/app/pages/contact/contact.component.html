@@ -1,0 +1,106 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-lg-6">
+      <h3 class="">
+        {{ "Ponerse en contacto" | translate | titlecase }}
+      </h3>
+      <ul>
+        <li>¿Tienes alguna pregunta sobre nosotros?</li>
+        <li>¿Estás interesado en asociarte con nosotros?</li>
+        <li>¿Tienes algunas sugerencias o simplemente quieres decir hola?</li>
+        <li>Solo contáctenos. Estamos aquí para ayudarte.</li>
+      </ul>
+
+      <div>
+        <h3>Solo contáctenos. Estamos aquí para ayudarte.</h3>
+        <p class="pl-4 text-base">
+          <a href="mailto:info@motikodesserts.com">info@motikodesserts.com</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="col-12 col-lg-6">
+      <form #form="ngForm">
+        <h3>
+          {{ "Ingrese los datos" | translate | titlecase }}
+        </h3>
+        <div>
+          <div>
+            <div>
+              <label for="name">
+                {{ "full name" | translate | titlecase }} *
+              </label>
+              <input
+                required
+                [(ngModel)]="name"
+                name="name"
+                type="text"
+                placeholder=""
+              />
+            </div>
+          </div>
+          <div>
+            <div>
+              <label for="email">
+                {{ "Email" | translate | titlecase }} *
+              </label>
+              <input
+                required
+                [(ngModel)]="email"
+                name="email"
+                type="email"
+                placeholder=""
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <div>
+            <div>
+              <label for="phone">
+                {{ "Phone" | translate | titlecase }}
+              </label>
+              <input
+                [(ngModel)]="phone"
+                name="phone"
+                type="tel"
+                placeholder=""
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <div>
+            <label for="message">
+              {{ "Message" | translate | titlecase }} *
+            </label>
+            <textarea
+              placeholder=""
+              name="message"
+              rows="8"
+              [(ngModel)]="message"
+            ></textarea>
+          </div>
+          <div *ngIf="successMsg">
+            <div>
+              {{ "message sent successfully" | translate | titlecase }}
+            </div>
+          </div>
+          <div *ngIf="errorMsg">
+            <div>
+              {{ "fields with * are required" | translate | titlecase }}
+            </div>
+          </div>
+
+          <div class="invalid-feedback">
+            <div>This field is required.</div>
+          </div>
+
+          <button (click)="send(form)">
+            {{ "Submit" | translate | titlecase }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

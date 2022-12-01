@@ -8,6 +8,12 @@ const routes: Routes = [
       import('./pages/home/home.module').then((m) => m.HomeModule),
   },
   {
+    path: 'contact',
+    loadChildren: () =>
+      import('./pages/contact/contact.module').then((m) => m.ContactModule),
+    pathMatch: 'full',
+  },
+  {
     path: '**',
     loadChildren: () =>
       import('./pages/page-not-found/page-not-found.module').then(
@@ -18,9 +24,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabledBlocking'
-})],
+  imports: [
+    RouterModule.forRoot(routes, {
+      initialNavigation: 'enabledBlocking',
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

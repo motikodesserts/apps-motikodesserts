@@ -1,0 +1,41 @@
+.footer {
+  background-color: #1c1c21;
+}
+
+.row {
+  padding: 2rem;
+}
+.logo {
+  width: 15rem;
+}
+
+.social {
+  width: 4rem;
+  height: auto;
+}
+
+.form-control {
+  border: 0;
+}
+
+input,
+input:focus {
+  color: white !important;
+  background-color: #1c1c21;
+  border: none;
+}
+
+.footer-btn {
+  background: #f87170;
+  color: #ffffff;
+  width: 200px;
+}
+
+.footer-btn:hover {
+  background: red;
+}
+
+.input-group {
+  padding: 1rem;
+  border: solid 2px #cccccc;
+}

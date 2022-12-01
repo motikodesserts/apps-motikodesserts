@@ -1,74 +1,76 @@
 <div class="navbar-header">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <div class="w-100 d-lg-none">
-        <button
-          class="navbar-toggler position-absolute"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-      <a class="navbar-brand ml-auto m-auto d-lg-none" routerLink="/">
-        <img
-          src="../../../assets/img/logo.png"
-          alt=""
-          width="200"
-          height="auto"
-        />
-      </a>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul
-          class="navbar-nav mx-auto d-flex justify-content-evenly align-items-start align-items-lg-center"
-        >
-          <li
-            *ngFor="let p of pages; let i = index"
-            class="nav-item"
-            [ngClass]="{
-              dropdown: p.subMenu,
-              'd-none': !p.title,
-              'd-lg-block': !p.title
-            }"
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <div class="w-100 d-lg-none">
+          <button
+            class="navbar-toggler position-absolute"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
-            <a
-              class="nav-link mx-lg-2"
-              [routerLink]="p.subMenu ? '#' : p.url"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-              [ngClass]="{ 'dropdown-toggle': p.subMenu }"
-              [routerLinkActive]="!p.subMenu && p.title ? 'active' : ''"
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <a class="navbar-brand ml-auto m-auto d-lg-none" routerLink="/">
+          <img
+            src="../../../assets/img/logo.png"
+            alt=""
+            width="200"
+            height="auto"
+          />
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul
+            class="navbar-nav mx-auto d-flex justify-content-evenly align-items-start align-items-lg-center"
+          >
+            <li
+              *ngFor="let p of pages; let i = index"
+              class="nav-item"
+              [ngClass]="{
+                dropdown: p.subMenu,
+                'd-none': !p.title,
+                'd-lg-block': !p.title
+              }"
             >
-              {{ p.title | translate | titlecase }}
-              <img
-                class="mx-5"
-                *ngIf="!p.title"
-                src="../../../assets/img/logo.png"
-                alt="logo motikodesserts"
-                width="200"
-              />
-            </a>
+              <a
+                class="nav-link mx-lg-3"
+                [routerLink]="p.subMenu ? '#' : p.url"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                [ngClass]="{ 'dropdown-toggle': p.subMenu }"
+                [routerLinkActive]="!p.subMenu && p.title ? 'active' : ''"
+              >
+                {{ p.title | translate | titlecase }}
+                <img
+                  class="mx-5"
+                  *ngIf="!p.title"
+                  src="../../../assets/img/logo.png"
+                  alt="logo motikodesserts"
+                  width="200"
+                />
+              </a>
 
-            <ul *ngIf="p.subMenu" class="dropdown-menu">
-              <li class="dropdown-item" *ngFor="let catalog of catalogs">
-                <a
-                  class="nav-link"
-                  [routerLink]="[
-                    ('catalogs' | translate) + '/',
-                    catalog.catalog.code
-                  ]"
-                  >{{ catalog.name | titlecase }}</a
-                >
-              </li>
-            </ul>
-          </li>
-        </ul>
+              <ul *ngIf="p.subMenu" class="dropdown-menu">
+                <li class="dropdown-item" *ngFor="let catalog of catalogs">
+                  <a
+                    class="nav-link"
+                    [routerLink]="[
+                      ('catalogs' | translate) + '/',
+                      catalog.catalog.code
+                    ]"
+                    >{{ catalog.name | titlecase }}</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
 </div>
