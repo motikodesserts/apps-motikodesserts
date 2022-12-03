@@ -1,0 +1,19 @@
+.carousel {
+  width: 100%;
+}
+
+.carousel-indicators button {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: solid 2px #fff;
+  background-color: transparent;
+}
+
+.active {
+  background-color: #f87170 !important;
+}
+
+.carousel-inner {
+  height: 400px;
+}
